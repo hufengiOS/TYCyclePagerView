@@ -590,6 +590,7 @@ NS_INLINE TYIndexSection TYMakeIndexSection(NSInteger index, NSInteger section) 
     [super layoutSubviews];
     BOOL needUpdateLayout = !CGRectEqualToRect(_collectionView.frame, self.bounds);
     _collectionView.frame = self.bounds;
+    _numberOfItems = [_dataSource numberOfItemsInPagerView:self];
     if ((_indexSection.section < 0 || needUpdateLayout) && (_numberOfItems > 0 || _didReloadData)) {
         _didLayout = YES;
         [self setNeedUpdateLayout];
